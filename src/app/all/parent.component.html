@@ -1,0 +1,15 @@
+<div class="parent">
+  <h2>Todos los hooks</h2>
+  <h3>Soy una instancia de ParentComponent</h3>
+
+  <button (click)="toggleChild()">
+    {{hasChild ? 'Destruir' : 'Crear'}} ChildComponent
+  </button>
+  <button (click)="updateHero()" [hidden]="!hasChild">Actualizar ChildComponent</button>
+
+  <lch-all-child *ngIf="hasChild" [name]="name">
+  </lch-all-child>
+
+  <h4>--Logs de Hooks del ciclo de vida de ChildComponent --</h4>
+  <div *ngFor="let msg of hookLog">{{msg}}</div>
+</div>
